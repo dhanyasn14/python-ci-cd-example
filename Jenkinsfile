@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/yourusername/python-ci-cd-example.git'
+                git 'https://github.com/dhanyasn14/python-ci-cd-example.git'
             }
         }
         stage('Install Python') {
