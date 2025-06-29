@@ -10,7 +10,7 @@ pipeline {
 
         stage('Setup Python Environment') {
             steps {
-                bat 'python -m venv venv'
+                bat '"C:\\Users\\charu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" -m venv venv'
                 bat '.\\venv\\Scripts\\pip install -r requirements.txt || exit 0'
             }
         }
@@ -23,7 +23,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deployment placeholder'
+                echo 'Deploy placeholder'
             }
         }
     }
