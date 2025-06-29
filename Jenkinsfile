@@ -7,20 +7,23 @@ pipeline {
                 git 'https://github.com/dhanyasn14/python-ci-cd-example.git'
             }
         }
-        stage('Install Python') {
+
+        stage('Setup Python Environment') {
             steps {
-                sh 'python3 -m venv venv'
-                sh './venv/bin/pip install -r requirements.txt'
+                bat 'python -m venv venv'
+                bat '.\\venv\\Scripts\\pip install -r requirements.txt || exit 0'
             }
         }
+
         stage('Run Tests') {
             steps {
-                sh './venv/bin/python -m unittest test_app.py'
+                bat '.\\venv\\Scripts\\python -m unittest test_app.py'
             }
         }
+
         stage('Deploy') {
             steps {
-                echo 'Deploy step placeholder (e.g., copy to server, run script, etc.)'
+                echo 'Deployment placeholder'
             }
         }
     }
